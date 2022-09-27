@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --bgColor: #F6F8FF;
+    --cardColor: #FEFEFE;
+    --searchBarColor: #FFFFFF;
+    --rectangleColor: #F6F8FF;
+    --strongLetterColor: #222731;
+    --weakLetterColor: #697C9A;
+    --midLetterColor: #4B6A9B;
+    --toDarkVisibility: visible;
+    --toLightVisibility: hidden;
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --bgColor: #141D2F;
+    --cardColor: #FEFEFE;
+    --searchBarColor: #FFFFFF;
+    --rectangleColor: #F6F8FF;
+    --strongLetterColor: #222731;
+    --weakLetterColor: #697C9A;
+    --midLetterColor: #4B6A9B;
+    --toDarkVisibility: hidden;
+    --toLightVisibility: visible;
+    color-scheme: dark;
+}
+
+body {
+    background-color: var(--bgColor);
+    height: 200vh;
+}
+
+#themeToogler {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+
+#toLightTheme {
+    position: absolute;
+    visibility: var(--toLightVisibility);
+}
+
+#toDarkTheme {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: var(--toDarkVisibility);
+}
