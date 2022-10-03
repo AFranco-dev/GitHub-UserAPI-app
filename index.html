@@ -38,12 +38,16 @@
 
       <form class="borderR15px" action="" method="get" id="usernameForm">
         <img id="searchImg" src="assets/icon-search.svg" alt="" aria="none" />
-        <input
-          type="text"
-          name=""
-          id="usernameValue"
-          placeholder="Search GitHub username..."
-        />
+        <div id="alarmPlusInput">
+          <input
+            type="text"
+            name=""
+            id="usernameValue"
+            placeholder="Search GitHub username..."
+            class="useTotalSpace"
+          />
+          <span class="useTotalWidth" id="notFound"></span>
+        </div>
         <button class="borderR10px" type="submit" id="usernameSearchButton">
           Search
         </button>
@@ -58,7 +62,7 @@
       />
       <div class="useTotalWidth" id="userInfo">
         <h2 id="userNickName">The Octocat</h2>
-        <a href="" id="profileLink">@<span>octocat</span></a>
+        <a href="" id="profileLink">@octocat</a>
         <p>Joined <span id="joinedDate">25 jan 2011</span></p>
       </div>
       <div class="useTotalSpace flexCenterVertical allColumns" id="bio">
@@ -86,28 +90,28 @@
       <div class="useTotalWidth allColumns" id="linksList">
         <ul>
           <li>
-            <a href="" class="" id="location">
+            <div class="" id="location">
               <img src="assets/icon-location.svg" alt="" aria="none" />
-              <span>San Francisco</span>
-            </a>
+              <span id="locationText">San Francisco</span>
+            </div>
           </li>
           <li>
             <a href="" class="" id="blog">
               <img src="assets/icon-website.svg" alt="" aria="none" />
-              <span>https://github.blog</span>
+              <span id="blogText">https://github.blog</span>
             </a>
           </li>
           <li>
-            <a href="" class="notAvailable" id="twitter">
+            <div class="notAvailable" id="twitter">
               <img src="assets/icon-twitter.svg" alt="" aria="none" />
-              <span>Not Available</span>
-            </a>
+              <span id="twitterText">Not Available</span>
+            </div>
           </li>
           <li>
-            <a href="" class="" id="workplace">
+            <div class="" id="workplace">
               <img src="assets/icon-company.svg" alt="" aria="none" />
-              <span>@github</span>
-            </a>
+              <span id="workplaceText">@github</span>
+            </div>
           </li>
         </ul>
       </div>
