@@ -1,38 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <title>Frontend Mentor | GitHub user search app</title>
-</head>
-<body>
-  <header>
-    devfinder
-    
-    <button id="themeToogler">
-      <span id="toLightTheme">
-        Light<img src="assets/icon-sun.svg" alt="">
-      </span>
-      <span id="toDarkTheme">
-        Dark<img src="assets/icon-moon.svg" alt="">
-      </span>
-    </button>
-    
-    Search GitHub username...
-    Search
-  </header>
-  <main>
-    Joined
-    
-    Repos
-    Followers
-    Following
-  </main>
-  <script src="main.js"></script>
-</body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="main.css" />
+
+    <title>Frontend Mentor | GitHub user search app</title>
+  </head>
+  <body class="flexCenterVertical">
+    <header class="flexCenterVertical" id="header">
+      <h1>
+        <span> devfinder </span>
+        <button class="flexCenterVertical useTotalSpace" id="themeToogler">
+          <span class="flexSBetween useTotalSpace" id="toLightTheme">
+            Light<img src="assets/icon-sun.svg" alt="" aria="none" />
+          </span>
+          <span class="flexSBetween useTotalSpace" id="toDarkTheme">
+            Dark<img src="assets/icon-moon.svg" alt="" aria="none" />
+          </span>
+        </button>
+      </h1>
+
+      <form class="borderR15px" action="" method="get" id="usernameForm">
+        <img id="searchImg" src="assets/icon-search.svg" alt="" aria="none" />
+        <input
+          type="text"
+          name=""
+          id="usernameValue"
+          placeholder="Search GitHub username..."
+        />
+        <button class="borderR10px" type="submit" id="usernameSearchButton">
+          Search
+        </button>
+      </form>
+    </header>
+    <main class="borderR15px" id="main">
+      <img
+        src="https://avatars.githubusercontent.com/u/583231?v=4"
+        alt=""
+        aria="none"
+        id="userImg"
+      />
+      <div class="useTotalWidth" id="userInfo">
+        <h2 id="userNickName">The Octocat</h2>
+        <a href="" id="profileLink">@<span>octocat</span></a>
+        <p>Joined <span id="joinedDate">25 jan 2011</span></p>
+      </div>
+      <div class="useTotalSpace flexCenterVertical allColumns" id="bio">
+        <p class="useTotalWidth" id="bioDescription">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+          inventore libero autem laudantium voluptate deleniti, error hic
+          laboriosam eius earum tenetur assumenda nostrum, mollitia sint
+          quibusdam quo laborum tempore quaerat.
+        </p>
+      </div>
+      <div class="useTotalWidth borderR10px allColumns" id="statistics">
+        <div class="flexCenterVertical statWrap">
+          <h3 class="statHeader">Repos</h3>
+          <p class="statValue" id="reposQuantity">8</p>
+        </div>
+        <div class="flexCenterVertical statWrap">
+          <h3 class="statHeader">Followers</h3>
+          <p class="statValue" id="followersQuantity">3938</p>
+        </div>
+        <div class="flexCenterVertical statWrap">
+          <h3 class="statHeader">Following</h3>
+          <p class="statValue" id="followingQuantity">9</p>
+        </div>
+      </div>
+      <div class="useTotalWidth allColumns" id="linksList">
+        <ul>
+          <li>
+            <a href="" class="" id="location">
+              <img src="assets/icon-location.svg" alt="" aria="none" />
+              <span>San Francisco</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="" id="blog">
+              <img src="assets/icon-website.svg" alt="" aria="none" />
+              <span>https://github.blog</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="notAvailable" id="twitter">
+              <img src="assets/icon-twitter.svg" alt="" aria="none" />
+              <span>Not Available</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="" id="workplace">
+              <img src="assets/icon-company.svg" alt="" aria="none" />
+              <span>@github</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
 </html>
