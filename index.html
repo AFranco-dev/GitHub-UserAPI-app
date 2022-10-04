@@ -35,20 +35,25 @@
         <span> devfinder </span>
         <button class="flexCenterVertical useTotalSpace" id="themeToogler">
           <span class="flexSBetween useTotalSpace" id="toLightTheme">
-            Light<img src="assets/icon-sun.svg" alt="" aria="none" />
+            Light<img src="assets/icon-sun.svg" alt="" aria-hidden="true" />
           </span>
           <span class="flexSBetween useTotalSpace" id="toDarkTheme">
-            Dark<img src="assets/icon-moon.svg" alt="" aria="none" />
+            Dark<img src="assets/icon-moon.svg" alt="" aria-hidden="true" />
           </span>
         </button>
       </h1>
       <!-- here is the form used for the username search -->
-      <form class="borderR15px" action="" method="get" id="usernameForm">
-        <img id="searchImg" src="assets/icon-search.svg" alt="" aria="none" />
+      <form class="borderR15px" method="get" id="usernameForm">
+        <img
+          id="searchImg"
+          src="assets/icon-search.svg"
+          alt=""
+          aria-hidden="true"
+        />
         <div id="alarmPlusInput">
           <input
             type="text"
-            name=""
+            name="usernameValue"
             id="usernameValue"
             placeholder="Search GitHub username..."
             class="useTotalSpace"
@@ -112,7 +117,7 @@
                 class="innerLiImg"
                 src="assets/icon-location.svg"
                 alt=""
-                aria="none"
+                aria-hidden="true"
               />
               <span class="innerLiText" id="locationText">San Francisco</span>
             </div>
@@ -123,7 +128,7 @@
                 class="innerLiImg"
                 src="assets/icon-website.svg"
                 alt=""
-                aria="none"
+                aria-hidden="true"
               />
               <span class="innerLiText" id="blogText">https://github.blog</span>
             </a>
@@ -134,7 +139,7 @@
                 class="innerLiImg"
                 src="assets/icon-twitter.svg"
                 alt=""
-                aria="none"
+                aria-hidden="true"
               />
               <span class="innerLiText" id="twitterText">Not Available</span>
             </div>
@@ -145,7 +150,7 @@
                 class="innerLiImg"
                 src="assets/icon-company.svg"
                 alt=""
-                aria="none"
+                aria-hidden="true"
               />
               <span class="innerLiText" id="workplaceText">@github</span>
             </div>
