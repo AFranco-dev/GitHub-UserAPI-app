@@ -1,5 +1,6 @@
 /* //Jorge Andre Franco Hernandez 27/09/2022 */
 /* universal attributes */
+/* resets */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -12,6 +13,8 @@ li {
 a {
   text-decoration: none;
 }
+/* here are the base variables used for the whole
+body of the document and when they will change */
 :root {
   --bgColor: #f6f8ff;
   --cardColor: #fefefe;
@@ -34,13 +37,14 @@ a {
   --strongLetterColor: #fff;
   --weakLetterColor: #fff;
   --midLetterColor: #fff;
+  /* when one is visible, the other one will not be */
   --toDarkVisibility: hidden;
   --toLightVisibility: visible;
   --svgColorDark: invert(100%) sepia(100%) saturate(1%) hue-rotate(212deg)
     brightness(106%) contrast(101%);
   color-scheme: dark;
 }
-
+/* tag styles */
 img {
   width: auto;
   height: 100%;
@@ -89,7 +93,7 @@ h1 {
   height: 20px;
   font-weight: 700;
 }
-
+/* when one is visible, the other one will not be */
 #toLightTheme {
   text-transform: uppercase;
   position: absolute;
@@ -116,6 +120,7 @@ h1 {
   margin: auto;
   margin-right: 9px;
 }
+/* here is the container for the input and the alarm */
 #alarmPlusInput {
   flex-grow: 1;
   display: grid;
@@ -135,6 +140,8 @@ h1 {
   color: var(--strongLetterColor);
   font-family: "Space Mono", monospace;
 }
+/* this is the alarm identifier
+it will only show when an error occurs */
 #notFound {
   color: #f74646;
   margin: auto;
@@ -143,7 +150,7 @@ h1 {
   font-size: 15px;
   grid-row: 1 / 2;
   grid-column: 2 / 3;
-  opacity: 0;
+  visibility: hidden;
 }
 #usernameSearchButton {
   width: 84px;
@@ -237,29 +244,17 @@ h1 {
 #linksList li {
   margin-bottom: 16px;
 }
-#linksList li a {
+
+.innerLiElements {
   position: relative;
   display: flex;
   align-items: center;
 }
-#linksList li div {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-#linksList li a img {
+.innerLiImg {
   background: none;
   filter: brightness(0) saturate(100%) var(--svgColorDark);
 }
-#linksList li div img {
-  background: none;
-  filter: brightness(0) saturate(100%) var(--svgColorDark);
-}
-#linksList li a span {
-  position: absolute;
-  left: 33px;
-}
-#linksList li div span {
+.innerLiText {
   position: absolute;
   left: 33px;
 }
@@ -318,8 +313,9 @@ a span:hover {
   filter: brightness(0) saturate(100%) invert(12%) sepia(5%) saturate(3022%)
     hue-rotate(182deg) brightness(94%) contrast(91%);
 }
-
+/* media query break point, from 768px and more this will be applied */
 @media (min-width: 768px) {
+  /* new grid distribution */
   #main {
     display: grid;
     grid-template-columns: 118px 1fr;
@@ -333,7 +329,6 @@ a span:hover {
     grid-row: 1 / 3;
   }
   #userInfo {
-    /* height: clamp(118px, 118px, 118px); */
     margin-top: 0;
     margin-left: 0;
     grid-column: 2 / 3;
@@ -353,7 +348,6 @@ a span:hover {
     grid-row: 1 / 2;
   }
   #bio {
-    /* margin-top: -20px; */
     padding: 0;
     grid-column: 2 / 3;
     grid-row: 2 / 4;
@@ -372,7 +366,7 @@ a span:hover {
     grid-template-rows: 1fr 1fr;
   }
 }
-
+/* shaky animation on error for better UX */
 @keyframes shake {
   0% {
     transform: translateX(10px);

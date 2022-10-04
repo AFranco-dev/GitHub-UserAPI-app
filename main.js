@@ -17,9 +17,12 @@ themeToogler.addEventListener("click", (e) => {
 deviceThemeListener.addEventListener("change", (e) => {
   darkThemeSetter();
 });
-
+// this function is for listening to the device
+// preferred scheme
 function darkThemeSetter() {
   if (
+    // here starts a match media with a try on using it and the executing it
+    // and checking if it matches
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
   ) {
@@ -28,7 +31,7 @@ function darkThemeSetter() {
     document.documentElement.setAttribute("data-theme", "light");
   }
 }
-
+// this function is for changing the actual theme manually
 function themeChanger() {
   console.log("clickheard");
   if (document.documentElement.getAttribute("data-theme") == "dark") {
@@ -55,16 +58,18 @@ function themeChanger() {
 // id = "blog";
 // id = "twitter";
 // id = "workplace";
-
+// these are the elements used for the user search
 const usernameForm = document.querySelector("#usernameForm");
 const usernameValue = document.querySelector("#usernameValue");
 const userNotFound = document.querySelector("#notFound");
-
+// this is the event listener for triggering the fetch and update
+// function
 usernameForm.addEventListener("submit", (e) => {
   e.preventDefault();
   GetPlusSetUserInfoPromise();
 });
-
+// this is the async function for getting the user information and
+// setting it in the UI
 const GetPlusSetUserInfoPromise = async () => {
   try {
     //takes form user value
@@ -85,6 +90,7 @@ const GetPlusSetUserInfoPromise = async () => {
     const data = await res.json();
     //log for debugging
     console.log(data);
+    // all the setter functions for updating the UI
     SetUserProfileImg(data);
     SetUserNickName(data);
     SetProfileLink(data);
@@ -98,19 +104,23 @@ const GetPlusSetUserInfoPromise = async () => {
     SetTwitter(data);
     SetWorkplace(data);
   } catch (error) {
+    // error handling with display and animation
     userNotFound.innerText = error;
     console.log(error);
     usernameValue.value = "";
     usernameValue.placeholder = "";
-    userNotFound.style.opacity = 1;
-    await userNotFound.classList.add("animation");
-    await setTimeout(() => {
+    userNotFound.style.visibility = "visible";
+    userNotFound.classList.add("animation");
+    setTimeout(() => {
       userNotFound.classList.remove("animation");
       usernameValue.placeholder = "Search GitHub username...";
-      userNotFound.style.opacity = 0;
+      userNotFound.style.visibility = "hidden";
     }, 2000);
   }
 };
+
+// if there is an optimal for this I would be really happy to
+// listen to it
 function SetUserProfileImg(data) {
   const userImg = document.querySelector("#userImg");
   userImg.src = data.avatar_url;
@@ -172,6 +182,7 @@ function SetBlog(data) {
     blogText.innerText = "Not available";
   } else {
     blog.classList.remove("notAvailable");
+    blog.href = data.blog;
     blogText.innerText = data.blog;
   }
 }

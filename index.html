@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A web app that uses GitHub user API for showing an user information."
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +27,10 @@
     <title>Frontend Mentor | GitHub user search app</title>
   </head>
   <body class="flexCenterVertical">
+    <!-- Here starts the header part, which has the H1, the theme changing button
+    and the form for the username search -->
     <header class="flexCenterVertical" id="header">
+      <!-- here is the header with the theme switcher -->
       <h1>
         <span> devfinder </span>
         <button class="flexCenterVertical useTotalSpace" id="themeToogler">
@@ -35,7 +42,7 @@
           </span>
         </button>
       </h1>
-
+      <!-- here is the form used for the username search -->
       <form class="borderR15px" action="" method="get" id="usernameForm">
         <img id="searchImg" src="assets/icon-search.svg" alt="" aria="none" />
         <div id="alarmPlusInput">
@@ -53,18 +60,24 @@
         </button>
       </form>
     </header>
+    <!-- here ends the header -->
+    <!-- here starts the main body of the app that includes all the information
+    about the user -->
     <main class="borderR15px" id="main">
+      <!-- the img is alone with no wrapper for ease of use with the CSS grid -->
       <img
         src="https://avatars.githubusercontent.com/u/583231?v=4"
-        alt=""
-        aria="none"
+        alt="GitHub user profile picture"
         id="userImg"
       />
+      <!-- Here starts the user essential info which includes the profile link
+      the username and the date it joined -->
       <div class="useTotalWidth" id="userInfo">
         <h2 id="userNickName">The Octocat</h2>
         <a href="" id="profileLink">@octocat</a>
         <p>Joined <span id="joinedDate">25 jan 2011</span></p>
       </div>
+      <!-- Here starts the stand alone div that is for the bio -->
       <div class="useTotalSpace flexCenterVertical allColumns" id="bio">
         <p class="useTotalWidth" id="bioDescription">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
@@ -73,6 +86,8 @@
           quibusdam quo laborum tempore quaerat.
         </p>
       </div>
+      <!-- here starts the statistics part that has all the 
+      numeric data about the user -->
       <div class="useTotalWidth borderR10px allColumns" id="statistics">
         <div class="flexCenterVertical statWrap">
           <h3 class="statHeader">Repos</h3>
@@ -87,35 +102,58 @@
           <p class="statValue" id="followingQuantity">9</p>
         </div>
       </div>
+      <!-- Here starts the about information about the user on an ul that 
+      includes it's residence, workplace, blog and twitter -->
       <div class="useTotalWidth allColumns" id="linksList">
         <ul>
           <li>
-            <div class="" id="location">
-              <img src="assets/icon-location.svg" alt="" aria="none" />
-              <span id="locationText">San Francisco</span>
+            <div class="innerLiElements" id="location">
+              <img
+                class="innerLiImg"
+                src="assets/icon-location.svg"
+                alt=""
+                aria="none"
+              />
+              <span class="innerLiText" id="locationText">San Francisco</span>
             </div>
           </li>
           <li>
-            <a href="" class="" id="blog">
-              <img src="assets/icon-website.svg" alt="" aria="none" />
-              <span id="blogText">https://github.blog</span>
+            <a href="" class="innerLiElements" id="blog">
+              <img
+                class="innerLiImg"
+                src="assets/icon-website.svg"
+                alt=""
+                aria="none"
+              />
+              <span class="innerLiText" id="blogText">https://github.blog</span>
             </a>
           </li>
           <li>
-            <div class="notAvailable" id="twitter">
-              <img src="assets/icon-twitter.svg" alt="" aria="none" />
-              <span id="twitterText">Not Available</span>
+            <div class="innerLiElements notAvailable" id="twitter">
+              <img
+                class="innerLiImg"
+                src="assets/icon-twitter.svg"
+                alt=""
+                aria="none"
+              />
+              <span class="innerLiText" id="twitterText">Not Available</span>
             </div>
           </li>
           <li>
-            <div class="" id="workplace">
-              <img src="assets/icon-company.svg" alt="" aria="none" />
-              <span id="workplaceText">@github</span>
+            <div class="innerLiElements" id="workplace">
+              <img
+                class="innerLiImg"
+                src="assets/icon-company.svg"
+                alt=""
+                aria="none"
+              />
+              <span class="innerLiText" id="workplaceText">@github</span>
             </div>
           </li>
         </ul>
       </div>
     </main>
+    <!-- here is the main js script  -->
     <script src="main.js"></script>
   </body>
 </html>
